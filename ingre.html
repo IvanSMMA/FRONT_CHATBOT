@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Museo Nacional de Antropología</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="logo-museo.png" alt="Museo Nacional de Antropología">
+            </div>
+            <div class="right-container">
+                <nav class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook" alt="facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram" alt="Instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter" alt="Twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube" alt="YouTube"></i></a>
+                </nav>
+                <nav class="main-menu">
+                    <a href="#">Colección</a>
+                    <a href="#">Exposiciones</a>
+                    <a href="#">Visita</a>
+                    <a href="#">El Museo</a>
+                    <a href="#">Publicaciones</a>
+                    <a href="#">Investigación y Educación</a>
+                    <a href="#">Buscar</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    
+    <main>
+        <div class="container" id="container">
+            <div class="form-container sign-up">
+                <form id="signupForm">
+                    <h1>Registrate</h1>
+                    <!-- <div class="googlebar">
+                        <div class="gologo">
+                            <img src="https://developers.google.com/identity/images/g-logo.png" alt="logogoogle">
+                        </div>
+                        <button class="google-btn">Registrate con Google</button>
+                    </div> -->
+                    <!-- <div class="linea-texto">
+                        <p>ó</p>
+                    </div> -->
+                    <label for="mail"></label>
+                    <input type="email" id="mail" placeholder="Email ID" required>
+                    <label for="contra"></label>
+                    <input type="password" id="contra" placeholder="Password" required>
+                    <button class="especial" type="submit" id="signupBtn">Registrate</button>
+                    <p class="pfinal">¿Ya tienes una cuenta? <span id="changein"><a href="#">Inicia Sesión</a></span></p>
+    
+                </form>
+            </div>
+    
+            <div class="form-container sign-in">
+                <form id="signInForm">
+                    <h1>Inicia Sesión</h1>
+                    <!-- <div class="googlebar">
+                        <div class="gologo">
+                            <img src="https://developers.google.com/identity/images/g-logo.png" alt="logogoogle">
+                        </div>
+                        <button class="google-btn">Inicia Sesión con Google</button>
+                    </div>
+                    <div class="linea-texto">
+                        <p>ó</p>
+                    </div> -->
+    
+                    <label for="mail"></label>
+                    <input type="email" id="mail" placeholder="Email ID" required>
+                    <label for="contra"></label>
+                    <input type="password" id="contra" placeholder="Password" required>
+                    <a href="#">¿Olvidaste tu contraseña?</a>
+                    <button class="especial" type="submit" id="signInBtn">Inicia Sesión</button>
+                    <p class="pfinal">¿Aún no tienes una cuenta? <span id="changeup"> <a href="#">Registrate</a></span></p>
+                </form>
+            </div>
+    
+    
+            <div class="toggle-container">
+                <div class="toggle">
+                    <div class="toggle-panel toggle-left">
+                        <h1>Gatos con 6 patas <br> perros con alas y más...</h1>
+                        <p>¿Ya has visto un alebrije antes?</p>
+                        <button class="hidden" id="login">!Inicia Sesión!</button>
+                    </div>
+    
+                    <div class="toggle-panel toggle-right">
+    
+                        <h1>Hola Explorador</h1>
+                        <p>Si aún no tienes tu boleto para el viaje, <br>¿Qué estás espernado? </p>
+                        <button class="hidden" id="register">!Registrate!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>
