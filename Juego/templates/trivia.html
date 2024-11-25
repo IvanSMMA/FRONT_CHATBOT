@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia del Museo Nacional de Antropología</title>
+</head>
+<body>
+    <h1>Trivia del Museo Nacional de Antropología</h1>
+
+    <!-- Registro de usuario -->
+    {% if not usuario_id and not resultado %}
+    <form action="/" method="POST">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+
+        <label for="correo">Correo electrónico (opcional):</label>
+        <input type="email" id="correo" name="correo"><br><br>
+
+        <button type="submit">Iniciar Trivia</button>
+    </form>
+
+    <!-- Preguntas de trivia -->
+    {% elif not resultado %}
+    <form action="/" method="POST">
+        <input type="hidden" name="usuario_id" value="{{ usuario_id }}">
+        {% set contador = 0 %}
+        {% for pregunta in preguntas %}
+            <div>
+                <p>{{ pregunta["pregunta"] }}</p>
+                {% for opcion in pregunta["opciones"] %}
+                    <label>
+                        <input type="radio" name="pregunta_{{ contador }}" value="{{ opcion }}" required>
+                        {{ opcion }}
+                    </label><br>
+                {% endfor %}
+            </div>
+            <hr>
+            {% set contador = contador + 1 %}
+        {% endfor %}
+        <button type="submit">Enviar Respuestas</button>
+    </form>
+
+    <!-- Mostrar resultados -->
+    {% elif resultado %}
+    <p>Has terminado la trivia. Tu puntaje es {{ puntaje }} de un total de {{ total_preguntas }} preguntas.</p>
+    <a href="/">Volver a empezar</a>
+    {% endif %}
+</body>
+</html>

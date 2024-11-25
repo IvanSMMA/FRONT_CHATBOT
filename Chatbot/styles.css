@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1919 ;
+}
+
+header {
+    background-color: black;
+    padding: 10px 20px;
+    color: white;
+    width: 100%;
+    border-bottom: 2px solid white;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo img {
+    height: 60px;
+}
+
+.right-container {
+    display: flex;
+    align-items: center;
+}
+
+header .social-links {
+    display: flex;
+    justify-content: flex-end; /* Alinea los íconos a la derecha */
+    margin-right: 0; /* Asegúrate de que no haya espacio a la derecha */
+    padding-right: 20px; /* Agrega un pequeño margen a la derecha si es necesario */
+}
+
+
+header .social-links a {
+    border-radius: 20%; /* Hace los iconos redondeados */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px; /* Ajusta el espacio entre los íconos */
+    width: 40px;
+    height: 40px;
+    color: white; /* Color de los iconos */
+    text-decoration: none;
+}
+
+header .right-container {
+    display: flex;
+    flex-direction: column; /* Coloca los iconos encima del menú */
+    align-items: flex-end; /* Alinea el contenido a la derecha */
+}
+
+header .main-menu {
+    display: flex;
+    justify-content: flex-end; /* Alinea el menú a la derecha */
+    margin-top: 10px; /* Ajusta la distancia entre las redes sociales y el menú */
+}
+
+header .main-menu a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+header .main-menu a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+
+main {
+    flex:1;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between ;
+    align-items: center;
+    background: linear-gradient(to bottom, black, #1a1919);
+    color: white;
+    padding: 10px 30px;
+}
+
+.hero .content {
+    text-align: center;
+}
+
+.hero .content h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+
+.hero .pieza-izquierda {
+    max-width: 400px;
+    border-radius: 8px;
+}
+
+.extra-images img {
+    display: flex;
+    width: 70%;
+    margin: 10px 0;
+    border-radius: 8px;
+    flex-direction: column;
+}
+
+.primera, .segunda {
+    display: flex;
+    align-items: center; /* Alinea la imagen y el botón verticalmente */
+    justify-content: center; /* Alinea horizontalmente en el centro */
+    margin-bottom: 20px; /* Espacio entre las dos secciones */
+    
+}
+
+.primera img, .segunda img {
+    width: 100px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 20%;
+}
+
+.primera .btn, .segunda .btn {
+    flex-grow: 1; /* Los botones crecerán para ocupar el mismo ancho */
+    
+    background: linear-gradient(to bottom, black, #1a1919);
+    color: white;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.2em;
+    display: inline-block;
+    text-align: center; /* Centra el texto dentro del botón */
+    height: 80px;
+    font-size: 1.4em;
+    font-weight: bol;
+}
+
+
+.primera .btn:hover, .segunda .btn:hover {
+    background-color: #444; /* Opción para cambiar el color de fondo al pasar el cursor */
+    border: none; /* Mantiene el borde invisible al hacer hover */
+}
+
+.segunda{
+    padding-top: 20px;
+  border-top: 3px solid white;
+}
+
+
+footer{
+    background-image: url("im6.jfif");
+    position: absolute;
+    bottom: 0;
+    height: 60px;
+    width: 100%;
+    color: white;
+}
+
+.fotopri{
+    padding-top: 5px;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    margin-bottom: -55PX;
+}
+
+.abajo a{
+    border-radius: 20%; /* Hace los iconos redondeados */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 20px; /* Ajusta el espacio entre los íconos */
+    font-size: 2.5em;
+    color: white; /* Color de los iconos */
+    text-decoration: none;
+}
+
+.fotopri a{
+
+    border-radius: 20%; /* Hace los iconos redondeados */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 20px; /* Ajusta el espacio entre los íconos */
+    font-size: 2.5em;
+    color: white; /* Color de los iconos */
+    text-decoration: none;
+}
+
+.chatbot-section {
+    display: flex;
+    align-items: center; /* Alinea los elementos verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    gap: 20px; /* Espacio entre los elementos */
+}
+
+.chatbot-section textarea {
+    width: 300px;
+    height: 80px;
+    resize: none;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 1em;
+}
+
+.chatbot-section .btn {
+    padding: 10px 20px;
+    background: linear-gradient(to bottom, black, #1a1919);
+    color: white;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    font-size: 1em;
+    height: 80px; /* Ajusta la altura para que coincida con el cuadro de texto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.chatbot-section .btn:hover {
+    background-color: #444;
+}
+
+.primera img {
+    width: 80px;
+    height: 80px; /* Ajusta la altura para que coincida con los otros elementos */
+    border-radius: 20%;
+}

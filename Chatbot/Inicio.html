@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Museo Nacional de Antropología</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="logo-museo.png" alt="Museo Nacional de Antropología">
+            </div>
+            <div class="right-container">
+                <nav class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook" alt="facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram" alt="Instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter" alt="Twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube" alt="YouTube"></i></a>
+                </nav>
+                <nav class="main-menu">
+                    <a href="#">Colección</a>
+                    <a href="#">Exposiciones</a>
+                    <a href="#">Visita</a>
+                    <a href="#">El Museo</a>
+                    <a href="#">Publicaciones</a>
+                    <a href="#">Investigación y Educación</a>
+                    <a href="#">Buscar</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <img src="im3.jfif" alt="Imagen de pieza fósil" class="pieza-izquierda">
+            <div class="content">
+                <div class="primera">
+                    <img src="im4.jfif" alt="primer" class="pre">
+
+                    <!-- Sección del chatbot: Pregunta y respuesta -->
+                    <div class="chatbot-section">
+                        <textarea id="chatPrompt" rows="4" cols="50" placeholder="¿Tienes alguna duda sobre alguna pieza?"></textarea>
+                        <br><br>
+                        <button class="btn" onclick="enviarPregunta()">Enviar Pregunta</button>
+                        <div id="respuestaChatbot"></div> <!-- Respuesta del chatbot -->
+                    </div>
+                </div>
+                <div class="segunda">
+                    <img src="im5.jfif" alt="primer" class="pre">
+                    <button class="btn">¿Crees saber lo suficiente para ganar? ¡Probémoslo!</button>
+                </div>
+            </div>
+            <div class="extra-images">
+                <img src="im1.jfif" alt="Imagen lateral derecha" class="arr">
+                <img src="im2.jfif" alt="Otra imagen lateral derecha" class="aba">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="abajo">
+            <a href="#"><i class="fa-regular fa-comments"></i></a>
+        </div>
+    </footer>
+
+    <!-- JavaScript para enviar la pregunta al backend Flask -->
+    <script>
+        async function enviarPregunta() {
+            const prompt = document.getElementById("chatPrompt").value;
+
+            if (prompt.trim() === "") {
+                alert("Por favor, ingresa una pregunta.");
+                return;
+            }
+
+            try {
+                const response = await fetch('http://localhost:5000/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ prompt: prompt })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Error: ${response.status}`);
+
+                }
+
+                const data = await response.json();
+                document.getElementById("respuestaChatbot").innerText = data.response;
+            } catch (error) {
+                console.error("Error al enviar la solicitud:", error);
+                alert("Hubo un problema al conectarse con el chatbot.");
+            }
+        }
+    </script>
+</body>
+</html>
